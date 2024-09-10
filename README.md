@@ -1,1 +1,1 @@
-# movie-app-ktuproject
+# CINEMASTER
