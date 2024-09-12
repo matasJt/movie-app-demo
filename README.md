@@ -14,7 +14,7 @@ svetainė pasiūlys ką žiūrėti toliau. Sistema leis išsifiltruoti pagal nor
 
 ### **Vartotojas**
 
-    Galimybė prisijungti ir atsijungti.
+    Galimybė prisijungti ir atsijungti, autautenfikacija remiantis JWT principu
     Filmų pridėjimas į norimų žiūrėti sąrašą (watchlist).
     Galimybė pridėti filmus į peržiūrėtų filmų sąrašą.
     Filmų įvertinimas
