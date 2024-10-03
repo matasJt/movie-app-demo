@@ -1,0 +1,433 @@
+﻿openapi: 3.0.0
+info:
+  title: Movie API
+  description: Basic movie application API with tags, movies, and reviews.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /tags:
+    get:
+      summary: Get a list of tags
+      tags:
+        - tag
+      operationId: getAllTags
+      responses:
+        '200':
+          description: A list of tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
+              example:
+                - id: 1
+                  title: Action
+                  description: Action movies with thrilling sequences.
+                - id: 2
+                  title: Drama
+                  description: Dramatic storytelling and character development.
+    post:
+      summary: Create a tag
+      tags:
+        - tag
+      operationId: createTag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTag'
+            example:
+              title: Comedy
+              description: Light-hearted and humorous movies.
+      responses:
+        '201':
+          $ref: '#/components/responses/singleTag'
+        '400':
+          $ref: '#/components/responses/badRequest'
+        '422':
+          $ref: '#/components/responses/unprocessableEntity'
+  /tags/{tagId}:
+    get:
+      summary: Get a tag by ID
+      tags:
+        - tag
+      operationId: getTag
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+      responses:
+        '200':
+          $ref: '#/components/responses/singleTag'
+        '404':
+          $ref: '#/components/responses/notFound'
+    put:
+      summary: Update a tag by ID
+      tags:
+        - tag
+      operationId: updateTag
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTag'
+            example:
+              id: 1
+              title: Action
+              description: Updated description for the Comedy tag.
+      responses:
+        '200':
+          $ref: '#/components/responses/singleTag'
+        '400':
+          $ref: '#/components/responses/badRequest'
+        '404':
+          $ref: '#/components/responses/notFound'
+        '422':
+          $ref: '#/components/responses/unprocessableEntity'
+    delete:
+      summary: Delete a tag by ID
+      tags:
+        - tag
+      operationId: deleteTag
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+      responses:
+        '204':
+          description: Tag deleted
+        '404':
+          $ref: '#/components/responses/notFound'
+  /tags/{tagId}/movies:
+    get:
+      summary: Get movies for a tag
+      tags:
+        - movie
+      operationId: getMovies
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+      responses:
+        '200':
+          description: List of movies associated with the tag
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+    post:
+      summary: Add a movie to a tag
+      tags:
+        - movie
+      operationId: createMovie
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMovie'
+      responses:
+        '201':
+          description: Movie added to the tag
+  /tags/{tagId}/movies/{movieId}:
+    get:
+      summary: Get a specific movie for a tag
+      tags:
+        - movie
+      operationId: getMovie
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+      responses:
+        '200':
+          description: A single movie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+    put:
+      summary: Update a movie for a tag
+      tags:
+        - movie
+      operationId: updateMovie
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMovie'
+      responses:
+        '200':
+          description: Updated movie
+    delete:
+      summary: Delete a movie for a tag
+      tags:
+        - movie
+      operationId: deleteMovie
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+      responses:
+        '204':
+          description: Movie deleted
+        '404':
+          $ref: '#/components/responses/notFound'
+  /tags/{tagId}/movies/{movieId}/reviews:
+    get:
+      summary: Get reviews for a specific movie
+      tags:
+        - review
+      operationId: getReviews
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+      responses:
+        '200':
+          description: List of reviews
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+    post:
+      summary: Add a review for a specific movie
+      tags:
+        - review
+      operationId: createReview
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReview'
+      responses:
+        '201':
+          description: Review added
+  /tags/{tagId}/movies/{movieId}/reviews/{reviewId}:
+    get:
+      summary: Get a specific review
+      tags:
+        - review
+      operationId: getReview
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+        - $ref: '#/components/parameters/reviewId'
+      responses:
+        '200':
+          description: A single review
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+    put:
+      summary: Update a review
+      tags:
+        - review
+      operationId: updateReview
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+        - $ref: '#/components/parameters/reviewId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateReview'
+      responses:
+        '200':
+          description: Updated review
+    delete:
+      summary: Delete a review
+      tags:
+        - review
+      operationId: deleteReview
+      parameters:
+        - $ref: '#/components/parameters/tagId'
+        - $ref: '#/components/parameters/movieId'
+        - $ref: '#/components/parameters/reviewId'
+      responses:
+        '204':
+          description: Review deleted
+components:
+  schemas:
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+    CreateTag:
+      type: object
+      required:
+        - title
+        - description
+      properties:
+        title:
+          minLength: 2
+          maxLength: 100
+          type: string
+        description:
+          minLength: 3
+          maxLength: 500
+          type: string
+    UpdateTag:
+      type: object
+      properties:
+        id:
+          type: integer
+        title: 
+          type: string
+        description:
+          type: string
+    Movie:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        year:
+          type: integer
+        director:
+          type: string
+        genre:
+          type: string
+    CreateMovie:
+      type: object
+      required:
+        - title
+        - year
+        - director
+        - genre
+      properties:
+        title:
+          type: string
+        year:
+          type: integer
+        director:
+          type: string
+        genre:
+          type: string
+    UpdateMovie:
+      type: object
+      properties:
+        title:
+          type: string
+        year:
+          type: integer
+        director:
+          type: string
+        genre:
+          type: string
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+        content:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    CreateReview:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+    UpdateReview:
+      type: object
+      properties:
+        content:
+          type: string
+  responses:
+    singleTag:
+      description: A single tag
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Tag'
+    unprocessableEntity:
+      description: Unprocessable entity response
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                format: uri
+              title:
+                type: string
+              status:
+                type: integer
+              detail:
+                type: string
+              instance:
+                type: string
+              errors:
+                type: object
+    badRequest:
+      description: Bad request response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+    notFound:
+      description: Resource was not found
+  parameters:
+    tagId:
+      name: tagId
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      description: The unique identifier of the tag
+    movieId:
+      name: movieId
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      description: The unique identifier of the movie
+    reviewId:
+      name: reviewId
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      description: The unique identifier of the review
+      
+tags:
+  - name: tag
+    description: Operations related to tags
+  - name: movie
+    description: Operations related to movies
+  - name: review
+    description: Operations related to reviews
+externalDocs:
+  description: Find more info here
+  url: https://example.com/docs

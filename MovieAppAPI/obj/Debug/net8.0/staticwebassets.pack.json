@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.json",
+      "PackagePath": "staticwebassets\\swagger\\openapi.json"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.yml",
+      "PackagePath": "staticwebassets\\swagger\\openapi.yml"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MovieAppAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MovieAppAPI.props",
+      "PackagePath": "build\\MovieAppAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MovieAppAPI.props",
+      "PackagePath": "buildMultiTargeting\\MovieAppAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MovieAppAPI.props",
+      "PackagePath": "buildTransitive\\MovieAppAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
