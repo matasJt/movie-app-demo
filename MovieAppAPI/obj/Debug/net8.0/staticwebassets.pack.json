@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.json",
+      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\swagger\\openapi.json",
       "PackagePath": "staticwebassets\\swagger\\openapi.json"
     },
     {
-      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.yml",
+      "Id": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\swagger\\openapi.yml",
       "PackagePath": "staticwebassets\\swagger\\openapi.yml"
     },
     {

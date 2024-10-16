@@ -2916,11 +2916,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\MovieAppAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\MovieAppAPI.csproj",
       "projectName": "MovieAppAPI",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\MovieAppAPI.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\MovieAppAPI.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -117,13 +117,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Movie'
+  /movies/:
     post:
-      summary: Add a movie to a tag
+      summary: Add a movie to a tags
       tags:
         - movie
       operationId: createMovie
-      parameters:
-        - $ref: '#/components/parameters/tagId'
       requestBody:
         required: true
         content:
@@ -132,15 +131,14 @@ paths:
               $ref: '#/components/schemas/CreateMovie'
       responses:
         '201':
-          description: Movie added to the tag
-  /tags/{tagId}/movies/{movieId}:
+          description: Movie added to the tags
+  /movies/{movieId}:
     get:
-      summary: Get a specific movie for a tag
+      summary: Get a specific movie
       tags:
         - movie
       operationId: getMovie
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
       responses:
         '200':
@@ -155,7 +153,6 @@ paths:
         - movie
       operationId: updateMovie
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
       requestBody:
         required: true
@@ -172,21 +169,19 @@ paths:
         - movie
       operationId: deleteMovie
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
       responses:
         '204':
           description: Movie deleted
         '404':
           $ref: '#/components/responses/notFound'
-  /tags/{tagId}/movies/{movieId}/reviews:
+  /movies/{movieId}/reviews:
     get:
       summary: Get reviews for a specific movie
       tags:
         - review
       operationId: getReviews
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
       responses:
         '200':
@@ -203,7 +198,6 @@ paths:
         - review
       operationId: createReview
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
       requestBody:
         required: true
@@ -221,9 +215,9 @@ paths:
         - review
       operationId: getReview
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
         - $ref: '#/components/parameters/reviewId'
+        - $ref: '#/components/parameters/tagId'
       responses:
         '200':
           description: A single review
@@ -231,13 +225,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Review'
+  /movies/{movieId}/reviews/{reviewId}:
     put:
       summary: Update a review
       tags:
         - review
       operationId: updateReview
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
         - $ref: '#/components/parameters/reviewId'
       requestBody:
@@ -255,9 +249,9 @@ paths:
         - review
       operationId: deleteReview
       parameters:
-        - $ref: '#/components/parameters/tagId'
         - $ref: '#/components/parameters/movieId'
         - $ref: '#/components/parameters/reviewId'
+        - $ref: '#/components/parameters/tagId'
       responses:
         '204':
           description: Review deleted
@@ -352,11 +346,15 @@ components:
       properties:
         content:
           type: string
+        rating:
+          type: integer
     UpdateReview:
       type: object
       properties:
         content:
           type: string
+        rating:
+          type: integer
   responses:
     singleTag:
       description: A single tag

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OEdyyFNX82BWxXbMNVFl/o3vwbpQbebvGfbhv0fNyBc=",
+  "Hash": "aZlnHIiW8WgNKEEXYGwvazh4mvgX/1OzR8G+k1N4k3Y=",
   "Source": "MovieAppAPI",
   "BasePath": "_content/MovieAppAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MovieAppAPI\\wwwroot",
       "Source": "MovieAppAPI",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\",
       "BasePath": "_content/MovieAppAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.json",
+      "Identity": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\swagger\\openapi.json",
       "SourceId": "MovieAppAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\",
       "BasePath": "_content/MovieAppAPI",
       "RelativePath": "swagger/openapi.json",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\swagger\\openapi.json"
     },
     {
-      "Identity": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\swagger\\openapi.yml",
+      "Identity": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\swagger\\openapi.yml",
       "SourceId": "MovieAppAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\wwwroot\\",
       "BasePath": "_content/MovieAppAPI",
       "RelativePath": "swagger/openapi.yml",
       "AssetKind": "All",

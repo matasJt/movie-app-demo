@@ -13,7 +13,7 @@ namespace MovieAppAPI.Data.Entities
 
 		public MovieDto ToDto()
 		{
-			return new MovieDto(Title, Director, Year, Genre);
+			return new MovieDto(Title, Director, Year, Genre,Tags.Select(x=> x.Title).ToList());
 		}
 	}
 }

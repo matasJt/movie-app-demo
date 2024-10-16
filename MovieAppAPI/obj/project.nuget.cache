@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XB58y/qlzgwCK5brBQYofe8fPiJhrs2PMHxgqn0+32shJf1Q+J5S1EArBjfy3LaS0zS0yhamXyxkwCn49g/6pg==",
+  "dgSpecHash": "l+Ju1nOy/3rzg+xm4nQ36NxngjxlfHLRu57yPpf1PdQncE+efewCCosplB7vmOnMV5fDGvKKljRLKhZyKspEgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\MovieAppAPI\\MovieAppAPI.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\MovieAppAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

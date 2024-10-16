@@ -7,7 +7,6 @@ using MovieAppAPI.Data;
 using MovieAppAPI.Data.Dtos;
 using MovieAppAPI.Data.Entities;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
-using Swashbuckle.AspNetCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,14 +16,38 @@ builder.Services.AddDbContext<MoviesDbContext>();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 var app = builder.Build();
+app.Use(async (context, next) =>
+{
+	await next();
 
+	if (context.Response.StatusCode == StatusCodes.Status404NotFound)
+	{
+		if (context.Request.Path.StartsWithSegments("/api/tags") && !context.Request.Path.Value.Contains("/movies"))
+		{
+			await context.Response.HttpContext.Response.WriteAsync("Tag was not found");
+		
+		}
+		else if (context.Request.Path.StartsWithSegments("/api/movies") && !context.Request.Path.Value.Contains("/reviews"))
+		{
+			await context.Response.HttpContext.Response.WriteAsync("Movie was not found");
+		}
+		else if (context.Request.Path.Value.Contains("/reviews"))
+		{
+			await context.Response.HttpContext.Response.WriteAsync("Review was not found");
+		}
+		else
+		{
+			await context.Response.WriteAsync("URL was not found");
+		}
+		
+	}
+});
 var tagsGroup = app.MapGroup("/api").AddFluentValidationAutoValidation();
-
 tagsGroup.MapGet("/tags", async (MoviesDbContext dbContext) =>
 {
 	return (await dbContext.Tags.ToListAsync()).Select(x => x.ToDto());
 });
-tagsGroup.MapGet("/tags/{tagId}", async (MoviesDbContext dbContext, int tagId) =>
+tagsGroup.MapGet("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId) =>
 {
 	var tag = await dbContext.Tags.FirstOrDefaultAsync(x => x.Id == tagId);
 
@@ -42,7 +65,7 @@ tagsGroup.MapPost("/tags", async (MoviesDbContext dbContext, CreateUpdateTagDto 
 	await dbContext.SaveChangesAsync();
 	return Results.Created($"/api/tags/{tag.Id}", tag.ToDto());
 });
-tagsGroup.MapPut("/tags/{tagId}", async (MoviesDbContext dbContext, int tagId, CreateUpdateTagDto dto ) =>
+tagsGroup.MapPut("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId, CreateUpdateTagDto dto ) =>
 {
 	var tag = await dbContext.Tags.FindAsync(tagId);
 
@@ -59,7 +82,7 @@ tagsGroup.MapPut("/tags/{tagId}", async (MoviesDbContext dbContext, int tagId, C
 	return Results.Ok(tag.ToDto());
 
 });
-tagsGroup.MapDelete("/tags/{tagId}", async (MoviesDbContext dbContext, int tagId) =>
+tagsGroup.MapDelete("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId) =>
 {
 	var tag = await dbContext.Tags.FindAsync(tagId);
 	if (tag == null)
@@ -71,16 +94,16 @@ tagsGroup.MapDelete("/tags/{tagId}", async (MoviesDbContext dbContext, int tagId
 	return Results.NoContent();
 });
 
-var moviesGroup = app.MapGroup("/api/tags/{tagId}").AddFluentValidationAutoValidation();
+var moviesGroup = app.MapGroup("/api").AddFluentValidationAutoValidation();
 
-moviesGroup.MapGet("/movies", async (MoviesDbContext dbContext,int tagId) =>
+moviesGroup.MapGet("/tags/{tagId:int}/movies", async (MoviesDbContext dbContext,int tagId) =>
 {
 	return (await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies).ToListAsync()).Select(x => x.ToDto());
 
 });
-moviesGroup.MapGet("/movies/{movieId}", (MoviesDbContext dbContext, int movieId, int tagId) =>
+moviesGroup.MapGet("/movies/{movieId:int}", async (MoviesDbContext dbContext, int movieId) =>
 {
-	var movie = dbContext.Tags.Where(x=> x.Id == tagId).SelectMany(x => x.Movies).FirstOrDefault(x => x.Id == movieId);
+	var movie = await dbContext.Movies.Include(x=> x.Tags).FirstOrDefaultAsync(x => x.Id == movieId);
 	if (movie == null)
 	{
 		return Results.NotFound();
@@ -88,7 +111,7 @@ moviesGroup.MapGet("/movies/{movieId}", (MoviesDbContext dbContext, int movieId,
 
 	return Results.Ok(movie.ToDto());
 });
-moviesGroup.MapPost("/movies", async (MoviesDbContext dbContext, int tagId, UpdateCreateMovieDto dto) =>
+moviesGroup.MapPost("/movies", async (MoviesDbContext dbContext,UpdateCreateMovieDto dto) =>
 {
 	var movie = new Movie
 	{
@@ -102,7 +125,7 @@ moviesGroup.MapPost("/movies", async (MoviesDbContext dbContext, int tagId, Upda
 	var tags = await dbContext.Tags.Where(x=> dto.Tags.Contains(x.Id)).ToListAsync();
 	if (tags.Count == 0)
 	{
-		return Results.NotFound("Tag not found");
+		return Results.NotFound();
 	}
 
 	foreach (var tag in tags)
@@ -112,62 +135,65 @@ moviesGroup.MapPost("/movies", async (MoviesDbContext dbContext, int tagId, Upda
 
 	dbContext.Movies.Add(movie);
 	await dbContext.SaveChangesAsync();
-	return Results.Created($"/api/tags/{tagId}/movies/{movie.Id}", movie.ToDto());
+	return Results.Created($"/api/movies/{movie.Id}", movie.ToDto());
 });
-moviesGroup.MapPut("/movies/{movieId}", async (MoviesDbContext dbContext, int movieId, int tagId, UpdateCreateMovieDto dto) =>
+moviesGroup.MapPut("/movies/{movieId:int}", async (MoviesDbContext dbContext, int movieId, UpdateCreateMovieDto dto) =>
 {
-	var movie = await dbContext.Tags.Where(x=> x.Id == tagId).SelectMany(x => x.Movies).FirstOrDefaultAsync(x => x.Id == movieId);
-	if (movie == null)
+	var movie = await dbContext.Movies.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == movieId);
+	var tags = await dbContext.Tags.Where(x => dto.Tags.Contains(x.Id)).ToListAsync();
+	if (movie == null || tags.Count == 0)
 	{
-		return Results.NotFound("Movie not found");
+		return Results.NotFound();
 	}
 	movie.Title = dto.Title;
 	movie.Director = dto.Director;
 	movie.Year = dto.Year;
 	movie.Genre = dto.Genre;
+	movie.Tags.Clear();
+	foreach(var tag in tags)
+	{
+		movie.Tags.Add(tag);
+	}
 	
 	dbContext.Movies.Update(movie);
 	await dbContext.SaveChangesAsync();
 	return Results.Ok(movie.ToDto());
 });
-moviesGroup.MapDelete("/movies/{movieId}", async (MoviesDbContext dbContext, int movieId, int tagId) =>
+moviesGroup.MapDelete("/movies/{movieId:int}", async (MoviesDbContext dbContext, int movieId) =>
 {
-	var movie = await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies).FirstOrDefaultAsync(x => x.Id == movieId);
-	var tag = await dbContext.Tags.FirstOrDefaultAsync(x => x.Id == tagId);
+	var movie = await dbContext.Tags.SelectMany(x => x.Movies).FirstOrDefaultAsync(x => x.Id == movieId);
 	if (movie == null)
 	{
-		return Results.NotFound("Movie not found");
+		return Results.NotFound();
 	}
 
-	movie.Tags.Remove(tag);
 	dbContext.Movies.Remove(movie);
 	await dbContext.SaveChangesAsync();
 	return Results.NoContent();
 });
 
-var reviewsGroup = app.MapGroup("/api/tags/{tagId}/movies/{movieId}").AddFluentValidationAutoValidation();
+var reviewsGroup = app.MapGroup("/api/").AddFluentValidationAutoValidation();
 
-reviewsGroup.MapGet("/reviews", async (MoviesDbContext dbContext,int movieId) =>
+reviewsGroup.MapGet("movies/{movieId:int}/reviews", async (MoviesDbContext dbContext,int movieId) =>
 {
 	return (await dbContext.Reviews.Where(x=> x.Movie.Id == movieId).ToListAsync()).Select(x => x.ToDto());
 });
-reviewsGroup.MapGet("/reviews/{reviewId}", async (MoviesDbContext dbContext, int reviewId, int movieId, int tagId) =>
+reviewsGroup.MapGet("tags/{tagId:int}/movies/{movieId:int}/reviews/{reviewId:int}", async (MoviesDbContext dbContext, int reviewId, int movieId,int tagId) =>
 {
 	var review = await dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == reviewId && x.Movie.Id == movieId);
-	var movie = await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies)
-		.FirstOrDefaultAsync(x => x.Id == movieId);
+	var movie = await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies).FirstOrDefaultAsync(x => x.Id == movieId);
 	if (review == null || movie == null)
 	{
 		return Results.NotFound();
 	}
 	return Results.Ok(review.ToDto());
 });
-reviewsGroup.MapPost("/reviews", async (MoviesDbContext dbContext, int movieId, int tagId, CreateUpdateReviewDto dto) =>
+reviewsGroup.MapPost("movies/{movieId:int}/reviews", async (MoviesDbContext dbContext, int movieId,CreateUpdateReviewDto dto) =>
 {
-	var movie = await dbContext.Movies.FirstOrDefaultAsync(x => x.Id == movieId && x.Tags.Any(x=> x.Id == tagId));
+	var movie = await dbContext.Movies.FirstOrDefaultAsync(x => x.Id == movieId);
 	if (movie == null)
 	{
-		return Results.NotFound("Movie not found to add review");
+		return Results.NotFound();
 	}
 	var review = new Review
 	{
@@ -180,15 +206,14 @@ reviewsGroup.MapPost("/reviews", async (MoviesDbContext dbContext, int movieId, 
 
 	dbContext.Reviews.Add(review);
 	await dbContext.SaveChangesAsync();
-	return Results.Created($"/api/tags/{movieId}/reviews/{review.Id}", review.ToDto());
+	return Results.Created($"/api/{movieId}/reviews/{review.Id}", review.ToDto());
 
 });
-reviewsGroup.MapPut("/reviews/{reviewId}", async (MoviesDbContext dbContext, CreateUpdateReviewDto dto, int movieId, int reviewId, int tagId) =>
+reviewsGroup.MapPut("movies/{movieId:int}/reviews/{reviewId:int}", async (MoviesDbContext dbContext, CreateUpdateReviewDto dto, int movieId, int reviewId) =>
 {
 	var review = await dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == reviewId && x.Movie.Id == movieId);
-	var movie = await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies)
-		.FirstOrDefaultAsync(x => x.Id == movieId);
-	if (review == null || movie == null)
+	
+	if (review == null)
 	{
 		return Results.NotFound();
 	}
@@ -199,12 +224,10 @@ reviewsGroup.MapPut("/reviews/{reviewId}", async (MoviesDbContext dbContext, Cre
 	await dbContext.SaveChangesAsync();
 	return Results.Ok(review.ToDto());
 });
-reviewsGroup.MapDelete("/reviews/{reviewId}", async (MoviesDbContext dbContext, int movieId, int reviewId, int tagId) =>
+reviewsGroup.MapDelete("movies/{movieId:int}/reviews/{reviewId:int}", async (MoviesDbContext dbContext, int movieId, int reviewId) =>
 {
 	var review = await dbContext.Reviews.FirstOrDefaultAsync(x => x.Id == reviewId && x.Movie.Id == movieId);
-	var movie = await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies)
-		.FirstOrDefaultAsync(x => x.Id == movieId);
-	if (review == null || movie == null)
+	if (review == null)
 	{
 		return Results.NotFound();
 	}

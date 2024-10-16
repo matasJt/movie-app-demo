@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using FluentValidation;
+using MovieAppAPI.Data.Entities;
 
 namespace MovieAppAPI.Data.Dtos
 {
@@ -17,7 +18,7 @@ namespace MovieAppAPI.Data.Dtos
 		}
 	}
 
-	public record MovieDto(string Title, string Director, int Year, string Genre);
+	public record MovieDto(string Title, string Director, int Year, string Genre, List<string> TagNames);
 	public record UpdateCreateMovieDto(string Title, string Director, int Year, string Genre, List<int> Tags)
 	{
 		public class Validator : AbstractValidator<UpdateCreateMovieDto>
