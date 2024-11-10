@@ -1,4 +1,6 @@
-﻿using MovieAppAPI.Data.Dtos;
+﻿using MovieAppAPI.Auth.Model;
+using MovieAppAPI.Data.Dtos;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieAppAPI.Data.Entities
 {
@@ -9,6 +11,9 @@ namespace MovieAppAPI.Data.Entities
 		public required int Rating { get; set; }
 		public required DateTimeOffset CreatedAt { get; set; }
 		public Movie Movie { get; set; }
+		[Required]
+		public required string UserId { get; set; }
+		public User? User { get; set; }
 
 		public ReviewDto ToDto()
 		{

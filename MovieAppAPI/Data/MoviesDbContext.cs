@@ -1,11 +1,11 @@
-﻿using System.Data.Common;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MovieAppAPI.Data.Entities;
-using Npgsql.PostgresTypes;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using MovieAppAPI.Auth.Model;
 
 namespace MovieAppAPI.Data
 {
-	public class MoviesDbContext(IConfiguration configuration) : DbContext
+	public class MoviesDbContext(IConfiguration configuration) : IdentityDbContext<User>
 	{
 		public DbSet<Tag> Tags { get; set; }
 		public DbSet<Movie> Movies { get; set; }
