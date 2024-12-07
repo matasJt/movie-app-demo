@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
+    <div class="container-fluid">
+        <a class="navbar-brand text-success fw-bold fs-2" href="#">CINEMASTER</a>
+        @if(!isAuthticated)
+        {
+            <div class="d-flex align-items-center d-lg-none">
+                <button class="btn btn-success btn-sm me-2" (click)="openLogin()">Sign In</button>
+             
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        }
+        @else
+         {
+            <div class="d-flex align-items-center d-lg-none">
+                <button class="btn btn-success btn-sm me-2" (click)="logout()">Sign out</button>
+             
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        }
+       
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link  fw-semibold fs-5" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  fw-semibold fs-5" routerLink="/">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold fs-5" routerLink="/">Services</a>
+                </li>
+                @if(isAdmin)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold fs-5" routerLink="/admin">Admin panel</a>
+                    </li>
+                }
+               
+            </ul>
+            <div class="d-lg-none mt-3 w-100">
+                <form class="d-flex">
+                    <input class="form-control form-control-sm me-2 flex-grow-1" id="search" type="search" placeholder="Search movie">
+                    <button class="btn btn-outline-success btn-sm me-2">Search</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="d-none d-lg-block">
+            <form class="d-flex">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Search movie">
+                <button class="btn btn-outline-success btn-sm me-2">Search</button>
+            </form>
+        </div>
+        @if(!isAuthticated)
+        {
+            <div class="d-none d-lg-block">
+                <button class="btn btn-success btn-sm" (click)="openLogin()">Sign In</button>
+            </div>
+        }
+        @else
+        {
+            <div class="d-none d-lg-block">
+                <button class="btn btn-success btn-sm" (click)="logout()">Log out</button>
+            </div>
+        }
+      
+    </div>
+</nav>

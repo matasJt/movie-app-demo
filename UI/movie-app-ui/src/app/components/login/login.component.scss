@@ -1,0 +1,15 @@
+.mat{
+    font-size: 60px;
+}
+.form-control{
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 50, 200); 
+    width: 100%;
+    transition:0.3s;
+}
+
+  .form-control:focus {
+    width: 105%; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 22, 66); 
+  } 

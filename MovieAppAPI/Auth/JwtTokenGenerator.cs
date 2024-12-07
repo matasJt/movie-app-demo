@@ -26,7 +26,7 @@ namespace MovieAppAPI.Auth
 			var tokenDescriptor = new SecurityTokenDescriptor
 			{
 				Subject = new ClaimsIdentity(claims),
-				Expires = DateTime.UtcNow.AddSeconds(20),
+				Expires = DateTime.UtcNow.AddMinutes(10),
 				Issuer = Issuer,
 				Audience = Audience,
 				SigningCredentials = new SigningCredentials(Key, SecurityAlgorithms.HmacSha256)
@@ -46,7 +46,7 @@ namespace MovieAppAPI.Auth
 			var tokenDescriptor = new SecurityTokenDescriptor
 			{
 				Subject = new ClaimsIdentity(claims),
-				Expires = DateTime.UtcNow.AddSeconds(40),
+				Expires = DateTime.UtcNow.AddDays(7),
 				Issuer = Issuer,
 				Audience = Audience,
 				SigningCredentials = new SigningCredentials(Key, SecurityAlgorithms.HmacSha256)

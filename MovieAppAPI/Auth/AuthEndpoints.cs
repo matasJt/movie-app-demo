@@ -74,12 +74,41 @@ namespace MovieAppAPI.Auth
 					context.Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
 					{
 						HttpOnly = true,
-						SameSite = SameSiteMode.Strict,
-						Expires = DateTime.UtcNow.AddSeconds(40)
+						SameSite = SameSiteMode.Lax,
+						Expires = DateTime.UtcNow.AddDays(7)
 					});
 
 					return Results.Ok(new Success(accessToken));
 				});
+			app.MapPost("/api/auth/refresh", async (JwtTokenGenerator createToken, HttpContext context, UserManager<User> userManager) =>
+			{
+				if (context.Request.Cookies.TryGetValue("refreshToken", out var cookieRefreshToken))
+				{
+					var isTokenValid = createToken.ValidateRefreshToken(cookieRefreshToken, out var claims);
+					if (isTokenValid)
+					{
+						var userId = claims.FindFirstValue(ClaimTypes.NameIdentifier);
+						var existingUser = await userManager.FindByIdAsync(userId);
+
+						if (existingUser == null)
+						{
+							return Results.UnprocessableEntity();
+						}
+
+						var userRoles = await userManager.GetRolesAsync(existingUser);
+						var newAccessToken = createToken.GenerateAccessToken(existingUser.Id, existingUser.UserName!, userRoles.ToList());
+						return Results.Ok(new Success(newAccessToken));
+					}
+				}
+				
+				return Results.Unauthorized();
+				
+			});
+			app.MapPost("api/auth/logout", (HttpContext context) =>
+			{
+				context.Response.Cookies.Delete("refreshToken");
+				return Results.Ok();
+			});
 		}
 
 		public record RegisterDto(string Username, string Email, string Password);

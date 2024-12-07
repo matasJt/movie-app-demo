@@ -1,11 +1,13 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.RateLimiting;
 using FluentValidation;
 using MovieAppAPI.Data;
 using MovieAppAPI.Endpoints;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using MovieAppAPI.Auth;
@@ -17,12 +19,12 @@ builder.Services.AddTransient<JwtTokenGenerator>();
 builder.Services.AddScoped<AuthSeeder>();
 builder.Services.AddDbContext<MoviesDbContext>();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
-
+builder.Services.AddCors(policy=> policy.AddDefaultPolicy(options=> options.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
 
 builder.Services.AddIdentity<User, IdentityRole>()
 	.AddEntityFrameworkStores<MoviesDbContext>()
 	.AddDefaultTokenProviders();
-	
+
 builder.Services.AddAuthentication(options =>
 {
 	options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -46,6 +48,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+app.UseCors();
 app.AddAuth();
 app.UseAuthentication();
 app.UseAuthorization();
@@ -76,7 +79,7 @@ app.Use(async (context, next) =>
 	}
 });
 
-var tagsGroup = app.MapGroup("/api").AddFluentValidationAutoValidation().RequireAuthorization();
+var tagsGroup = app.MapGroup("/api").AddFluentValidationAutoValidation();
 var moviesGroup = app.MapGroup("/api").AddFluentValidationAutoValidation();
 var reviewsGroup = app.MapGroup("/api/").AddFluentValidationAutoValidation();
 

@@ -25,9 +25,10 @@ namespace MovieAppAPI.Endpoints
 				{
 					return Results.NotFound();
 				}
+
 				return Results.Ok(new TagDto(tag.Id, tag.Title));
-			}).RequireAuthorization();
-			tagsGroup.MapPost("/tags", [Authorize(Roles = nameof(Roles.Admin))] async (MoviesDbContext dbContext, CreateUpdateTagDto dto, HttpContext httpContext) =>
+			});
+			tagsGroup.MapPost("/tags", async (MoviesDbContext dbContext, CreateUpdateTagDto dto, HttpContext httpContext) =>
 			{
 				var tag = new Tag { Title = dto.Title, Description = dto.Description, UserId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)! };
 
