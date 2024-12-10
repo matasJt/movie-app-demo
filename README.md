@@ -7,29 +7,28 @@ svetainė pasiūlys ką žiūrėti toliau. Sistema leis išsifiltruoti pagal nor
 ### **Svečias**
 
     Matyti filmų aprašymus, apžvalgas, įvertinimus, aktorių ir režisierių informaciją.
-    Galimybė filtruoti filmus pagal žanrą, įvertinimą, populiarumą, datą ir pan.
-    Galimybė matyti vartotojų filmų sąrašus ir jų informaciją.
+    Galimybė filtruoti filmus pagal žanrą, datą ir pan.
     Galimybė vykdyti paieškos užklausą.
     Galimybė kurti paskyrą.
 
 ### **Vartotojas**
 
     Galimybė prisijungti ir atsijungti, autenfikacija remiantis JWT principu
-    Filmų pridėjimas į norimų žiūrėti sąrašą (watchlist).
+    Filmų pridėjimas į norimų žiūrėti sąrašą (watchlist). (kitam kartui, nes per daug)
     Galimybė pridėti filmus į peržiūrėtų filmų sąrašą.
     Filmų įvertinimas
-    Statistika apie peržiūrėtus filmus (pvz., kiek filmų peržiūrėjo per metus, mėnesį, bendrą peržiūrėtų filmų laiką).
+    Statistika apie peržiūrėtus filmus (pvz., kiek filmų peržiūrėjo per metus, mėnesį, bendrą peržiūrėtų filmų laiką). (kitam kartui, nes per sunku)
     Galimybė sekti kitus vartotojus ir matyti jų veiklą (ką žiūri, ką vertina, ką rekomenduoja).
-    Kurti filmų sąrašus (pvz., „Klasikiniai siaubo filmai“).
-    Matyti personalizuotas rekomendacijas, remiantis peržiūrėtais ir įvertintais filmais.
+    Kurti filmų sąrašus (pvz., „Klasikiniai siaubo filmai“). (kitam kartui, nes per sunku)
+    Matyti personalizuotas rekomendacijas, remiantis peržiūrėtais ir įvertintais filmais. (kitam kartui, nes per sunku)
 
 ### **Administratorius**
     
     Filmų duomenų bazės valdymas: filmų pridėjimas, redagavimas, ištrynimas.
     Vartotojų veiklos stebėjimas ir moderavimas (pvz., netinkamų komentarų ar apžvalgų šalinimas).
     Vartotojų paskyrų valdymas
-    Statistinė analizė: galimybė matyti vartotojų aktyvumą, populiariausius filmus, dažniausiai žiūrimus žanrus ir t.t.
-    Sisteminių pranešimų siuntimas visiems vartotojams (pvz., naujienos apie atnaujinimus, taisyklių pasikeitimus ir pan.).
+    Statistinė analizė: galimybė matyti vartotojų aktyvumą, populiariausius filmus, dažniausiai žiūrimus žanrus ir t.t.  (kitam kartui, nes per sunku)
+    Sisteminių pranešimų siuntimas visiems vartotojams (pvz., naujienos apie atnaujinimus, taisyklių pasikeitimus ir pan.). (kitam kartui, nes per sunku)
 ### Technologijos
 - Angular framework (Front-end)
   - Naudoja Typescript programavimo kalbą
