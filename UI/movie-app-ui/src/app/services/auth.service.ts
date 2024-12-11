@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { jwtDecode } from 'jwt-decode';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class AuthService {
   private authenticated = new BehaviorSubject<boolean>(false);
   private userRole = new BehaviorSubject<string | null>(null);
-  private apiUrl = 'http://localhost:5031/api';
+   private apiUrl = "http://localhost:5031/api";
+  //private apiUrl = "https://movie-app-api.azurewebsites.net/api";
 
   isAuthenticated$ = this.authenticated.asObservable();
   userRole$ = this.userRole.asObservable();
@@ -46,11 +48,7 @@ export class AuthService {
             this.startTokenRefreshInterval();
           }
         }),
-        catchError((error) => {
-          console.error('Login failed:', error);
-          return throwError(error);
-        })
-      );
+       );
   }
 
   private decodeAndSetRole(token: string): void {

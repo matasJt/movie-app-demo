@@ -74,7 +74,8 @@ namespace MovieAppAPI.Auth
 					context.Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
 					{
 						HttpOnly = true,
-						SameSite = SameSiteMode.Lax,
+						SameSite = SameSiteMode.Strict, //None
+						//Secure = true,
 						Expires = DateTime.UtcNow.AddDays(7)
 					});
 

@@ -38,7 +38,7 @@ namespace MovieAppAPI.Endpoints
 					Rating = dto.Rating,
 					CreatedAt = DateTimeOffset.UtcNow,
 					Movie = movie,
-					UserId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)!
+					UserId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)!
 				};
 
 				dbContext.Reviews.Add(review);

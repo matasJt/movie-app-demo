@@ -11,13 +11,15 @@ namespace MovieAppAPI.Data.Entities
 		public required string Director { get; set; }
 		public required int Year { get; set; }
 		public required string Genre { get; set; }
+		public required string PosterUrl { get; set; }
 		public List<Tag> Tags { get; set; } = new List<Tag>();
 		[Required]
 		public required string UserId { get; set; }
+		
 		public User? User { get; set; }
 		public MovieDto ToDto()
 		{
-			return new MovieDto(Title, Director, Year, Genre,Tags.Select(x=> x.Title).ToList());
+			return new MovieDto(Id, Title, Director, Year, Genre,Tags.Select(x=> x.Title).ToList(), PosterUrl);
 		}
 	}
 }

@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Admin\Desktop\KTU\3 kursas\Saitynai\MovieAppAPI\movie-app-ktuproject\MovieAppAPI\Properties\PublishProfiles\movie-app-api - Zip Deploy2.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

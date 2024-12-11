@@ -34,7 +34,8 @@ namespace MovieAppAPI.Endpoints
 					Director = dto.Director,
 					Year = dto.Year,
 					Genre = dto.Genre,
-					UserId = httpContext.User.FindFirstValue(JwtRegisteredClaimNames.Sub)!
+					UserId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)!,
+					PosterUrl = dto.PosterUrl
 				};
 				dbContext.Movies.Add(movie);
 

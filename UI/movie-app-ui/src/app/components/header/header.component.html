@@ -1,73 +1,96 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
-    <div class="container-fluid">
-        <a class="navbar-brand text-success fw-bold fs-2" href="#">CINEMASTER</a>
-        @if(!isAuthticated)
-        {
-            <div class="d-flex align-items-center d-lg-none">
-                <button class="btn btn-success btn-sm me-2" (click)="openLogin()">Sign In</button>
-             
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        }
-        @else
-         {
-            <div class="d-flex align-items-center d-lg-none">
-                <button class="btn btn-success btn-sm me-2" (click)="logout()">Sign out</button>
-             
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        }
-       
+<nav id="header" class="navbar navbar-expand-lg navbar-dark  py-3 shadow fixed-top" [class.shrink]="isShrunk">
+    <div class="container">
+        <a class="navbar-brand text-success fw-bold fs-3" href="#">CINEMASTER</a>
         
+        <div class="d-flex align-items-center d-lg-none">
+            @if(!isAuthticated)
+            {
+                <button class="btn btn-success btn-sm me-2" (click)="openLogin()">Sign In</button>
+            }
+            @else
+            {
+                <button class="btn btn-danger btn-sm me-2" (click)="logout()">Log Out</button>
+            }
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center flex-grow-1">
                 <li class="nav-item">
-                    <a class="nav-link  fw-semibold fs-5" routerLink="/">Home</a>
+                    <a class="nav-link fw-semibold fs-5" [@linkAnimation]="isAuthticated ? 'out' : 'in'" routerLink="/main">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  fw-semibold fs-5" routerLink="/">About</a>
+                    <a class="nav-link  fw-semibold fs-5" [@linkAnimation]="isAuthticated ? 'out' : 'in'" routerLink="/main">Series</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-semibold fs-5" routerLink="/">Services</a>
+                    <a class="nav-link  fw-semibold fs-5" [@linkAnimation]="isAuthticated ? 'out' : 'in'" routerLink="main">Collections</a>
                 </li>
                 @if(isAdmin)
                 {
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold fs-5" routerLink="/admin">Admin panel</a>
+                        <a class="nav-link text-warning fw-semibold fs-5" routerLink="/admin">Admin Panel</a>
                     </li>
                 }
-               
             </ul>
-            <div class="d-lg-none mt-3 w-100">
-                <form class="d-flex">
-                    <input class="form-control form-control-sm me-2 flex-grow-1" id="search" type="search" placeholder="Search movie">
-                    <button class="btn btn-outline-success btn-sm me-2">Search</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="d-none d-lg-block">
-            <form class="d-flex">
-                <input class="form-control form-control-sm me-2" type="search" placeholder="Search movie">
-                <button class="btn btn-outline-success btn-sm me-2">Search</button>
+
+            <form class="d-flex d-lg-none mt-3 w-100">
+                <input class="form-control form-control-sm me-2 flex-grow-1" type="search" placeholder="Search movies">
+                <button class="btn btn-outline-success btn-sm">Search</button>
             </form>
         </div>
-        @if(!isAuthticated)
-        {
-            <div class="d-none d-lg-block">
+
+        <div class="d-none d-lg-flex align-items-center">
+            <form class="d-flex me-3">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Search">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                width="20" 
+                height="20" 
+                class="position-absolute top-50 translate-middle-y ms-2 text-muted"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+                <button class="btn btn-outline-success btn-sm">Search</button>
+                
+            </form>
+
+            @if(!isAuthticated)
+            {
                 <button class="btn btn-success btn-sm" (click)="openLogin()">Sign In</button>
-            </div>
-        }
-        @else
-        {
-            <div class="d-none d-lg-block">
-                <button class="btn btn-success btn-sm" (click)="logout()">Log out</button>
-            </div>
-        }
-      
+            }
+            @else
+            {
+                <div class="text-center me-2 user-section" [@headerAnimation]="'in'">
+                    <button class="btn btn-danger btn-sm m-2" (click)="logout()">Sign out as</button>
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 24 24" 
+                        width="35" 
+                        height="35" 
+                        class="mb-1 text-primary"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="10" r="3"></circle>
+                        <path d="M12 13c-3 0-5 1.5-5 4v1h10v-1c0-2.5-2-4-5-4z"></path>
+                    </svg>
+                </div>
+            }
+          
+           
+        </div>
     </div>
 </nav>

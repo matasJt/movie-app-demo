@@ -1,0 +1,17 @@
+<div class="container px-4">
+    <h1 class="text-light fw-bold">Movies</h1>
+    <div class="row g-3 justify-content-start">
+        @for(movie of allMovies;track movie){
+            <div class="col-6 col-sm-4 col-md-2">
+                <div class="card h-100" (click)="emit(movie.id)">
+                    <img [src]="movie.posterUrl" class="card-img-top" alt="Movie Poster" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.title}}</h5>
+                        <p class="card-text">{{movie.year}}</p>
+                    </div>
+                </div>
+            </div>
+        }
+       
+    </div>
+</div>

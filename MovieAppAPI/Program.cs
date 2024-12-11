@@ -9,6 +9,7 @@ using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MovieAppAPI.Auth;
 using MovieAppAPI.Auth.Model;
@@ -87,7 +88,10 @@ TagEndpoints.MapTagEndpoints(tagsGroup);
 MovieEndpoints.MapMovieEndpoints(moviesGroup);
 ReviewEndpoints.MapReviewEndpoints(reviewsGroup);
 
+var migrate = app.Services.CreateScope();
+var dbContext = migrate.ServiceProvider.GetRequiredService<MoviesDbContext>();
 
+dbContext.Database.Migrate();
 var scope = app.Services.CreateScope();
 var seedData = scope.ServiceProvider.GetRequiredService<AuthSeeder>();
 await seedData.SeedAsync();

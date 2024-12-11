@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl, A
 import { NgClass } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +26,6 @@ export class LoginComponent{
     private authService: AuthService,
     private router: Router,
   ){}
-  private apiUrl = 'http://localhost:5031/api';
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username:[
@@ -61,7 +59,6 @@ export class LoginComponent{
         (error) =>{
           this.invalidLogin = true;
           this.loginForm.reset();
-          console.log(error)
         }
       )
     }

@@ -18,8 +18,8 @@ namespace MovieAppAPI.Data.Dtos
 		}
 	}
 
-	public record MovieDto(string Title, string Director, int Year, string Genre, List<string> TagNames);
-	public record UpdateCreateMovieDto(string Title, string Director, int Year, string Genre, List<int> Tags)
+	public record MovieDto(int Id, string Title, string Director, int Year, string Genre, List<string> TagNames, string PosterUrl);
+	public record UpdateCreateMovieDto(string Title, string Director, int Year, string Genre, List<int> Tags, string PosterUrl)
 	{
 		public class Validator : AbstractValidator<UpdateCreateMovieDto>
 		{
