@@ -50,7 +50,7 @@ namespace MovieAppAPI.Endpoints
 
 				dbContext.Tags.Update(tag);
 				await dbContext.SaveChangesAsync();
-				return Results.Ok(tag.ToDto());
+				return Results.Ok(tag.ToDto);
 
 			});
 			tagsGroup.MapDelete("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId) =>

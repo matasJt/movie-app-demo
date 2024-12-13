@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -12,11 +12,14 @@ import { environment } from '../../environments/environment.development';
 export class AuthService {
   private authenticated = new BehaviorSubject<boolean>(false);
   private userRole = new BehaviorSubject<string | null>(null);
+  private _userId = new BehaviorSubject<string>('');
    private apiUrl = "http://localhost:5031/api";
   //private apiUrl = "https://movie-app-api.azurewebsites.net/api";
 
   isAuthenticated$ = this.authenticated.asObservable();
   userRole$ = this.userRole.asObservable();
+  userId$ = this._userId.asObservable();
+  
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
     this.initializeAuthState();
@@ -44,6 +47,7 @@ export class AuthService {
           if (response.accessToken) {
             this.setAccessToken(response.accessToken);
             this.authenticated.next(true);
+            this._userId.next(this.getUserId())
             this.decodeAndSetRole(response.accessToken);
             this.startTokenRefreshInterval();
           }
@@ -86,7 +90,7 @@ export class AuthService {
   }
 
   private startTokenRefreshInterval(): void {
-    const refreshInterval = 5*60*1000;
+    const refreshInterval = 2*60;
     setInterval(() => {
       const accessToken = this.getAccessToken();
       if (accessToken) {
@@ -94,7 +98,7 @@ export class AuthService {
         const decoded: any = jwtDecode(accessToken);
         const timeLeft = decoded.exp - now;
 
-        if (timeLeft < 5 * 60) {
+        if (timeLeft < 2*60) {
           this.refreshAccessToken().subscribe();
         }
       }
@@ -117,5 +121,20 @@ export class AuthService {
 
   private clearAccessToken(): void {
     this.cookieService.delete('accessToken', '/');
+  }
+  public getBearer(): HttpHeaders{
+    const token = this.cookieService.get('accessToken');
+        const headers = new HttpHeaders({
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        });
+      return headers;
+  }
+  public getUserId(): string{
+    const token = this.cookieService.get('accessToken');
+    const decoded: any = jwtDecode(token);
+
+    return decoded.sub;
+
   }
 }

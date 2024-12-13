@@ -46,8 +46,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    const scrollPosition = 
-      document.documentElement.scrollTop;
+    const scrollPosition = document.documentElement.scrollTop;
     
     this.isShrunk = scrollPosition > this.scrollThreshold;
   }

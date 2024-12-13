@@ -17,7 +17,7 @@ namespace MovieAppAPI.Data.Entities
 
 		public ReviewDto ToDto()
 		{
-			return new ReviewDto(Content, Rating, CreatedAt);
+			return new ReviewDto(Id, Content, Rating, CreatedAt,User.UserName,UserId);
 		}
 	}
 }

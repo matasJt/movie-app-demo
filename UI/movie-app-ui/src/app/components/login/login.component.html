@@ -28,13 +28,14 @@
        
           @if(invalidLogin)
           {
+           
             <div class="alert alert-danger">Invalid username or password</div>
           }
           <h5 class="card-title text-center mb-5 fst-italic fs-4">Sign in to your account</h5>
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
             <div class="form-floating mb-3" id="form-input">
               <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="username"
-               [ngClass]="{'is-invalid': submitted && form['username'].errors}">
+               [class.is-invalid]=" submitted && form['username'].errors">
                @if (submitted && form['username'].errors) 
                {
                 <div class="invalid-feedback">

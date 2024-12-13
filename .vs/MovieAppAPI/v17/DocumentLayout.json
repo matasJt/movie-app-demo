@@ -3,30 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\authseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\authseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\dtos\\alldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\dtos\\alldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\endpoints\\movieendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\endpoints\\movieendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\endpoints\\reviewendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\endpoints\\reviewendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,36 +11,60 @@
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\endpoints\\tagendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\dtos\\alldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\dtos\\alldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\authendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\endpoints\\movieendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\endpoints\\movieendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\authseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\authseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\model\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\model\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\entities\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\entities\\tag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\moviesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\moviesdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\jwttokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\data\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\data\\entities\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\auth\\model\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\auth\\model\\roles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|solutionrelative:movieappapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D134916-B5FC-483E-8C73-6C22456E6307}|MovieAppAPI\\MovieAppAPI.csproj|c:\\users\\admin\\desktop\\ktu\\3 kursas\\saitynai\\movieappapi\\movie-app-ktuproject\\movieappapi\\migrations\\20241108205342_identity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,125 +90,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Tag.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Tag.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Tag.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Tag.cs",
-              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Tag.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAUwA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T09:36:28.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MovieEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
-              "RelativeToolTip": "MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T16:41:07.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Program.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Program.cs",
-              "RelativeToolTip": "MovieAppAPI\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEsAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T15:47:33.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthSeeder.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\AuthSeeder.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthSeeder.cs",
-              "RelativeToolTip": "MovieAppAPI\\Auth\\AuthSeeder.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T13:28:02.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Movie.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Movie.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Movie.cs",
-              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Movie.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAA6wBAAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T08:43:58.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Review.cs",
-              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Review.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:10:12.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TagEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\TagEndpoints.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Endpoints\\TagEndpoints.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\TagEndpoints.cs",
-              "RelativeToolTip": "MovieAppAPI\\Endpoints\\TagEndpoints.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCAAAACOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T16:38:35.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "ReviewEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\ReviewEndpoints.cs",
               "RelativeDocumentMoniker": "MovieAppAPI\\Endpoints\\ReviewEndpoints.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\ReviewEndpoints.cs",
               "RelativeToolTip": "MovieAppAPI\\Endpoints\\ReviewEndpoints.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCgAAABJAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T16:41:26.232Z"
+              "WhenOpened": "2024-11-08T16:41:26.232Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JwtTokenGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
-              "RelativeToolTip": "MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T10:31:38.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "AuthEndpoints.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthEndpoints.cs",
               "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\AuthEndpoints.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthEndpoints.cs",
               "RelativeToolTip": "MovieAppAPI\\Auth\\AuthEndpoints.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAAAEsAAAAWAAAA",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAgwHcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T10:52:20.125Z",
               "EditorCaption": ""
@@ -221,26 +122,27 @@
               "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Dtos\\AllDtos.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Dtos\\AllDtos.cs",
               "RelativeToolTip": "MovieAppAPI\\Data\\Dtos\\AllDtos.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAwwA8AAAA6AAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAzwCYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T16:26:27.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MoviesDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\MoviesDbContext.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\MoviesDbContext.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\MoviesDbContext.cs",
-              "RelativeToolTip": "MovieAppAPI\\Data\\MoviesDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "Tag.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Tag.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Tag.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Tag.cs",
+              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Tag.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAUwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T17:32:02.166Z"
+              "WhenOpened": "2024-10-16T09:36:28.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 7,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\Model\\Roles.cs",
               "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\Model\\Roles.cs",
@@ -248,11 +150,128 @@
               "RelativeToolTip": "MovieAppAPI\\Auth\\Model\\Roles.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T12:47:50.069Z"
+              "WhenOpened": "2024-11-09T12:47:50.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovieEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
+              "RelativeToolTip": "MovieAppAPI\\Endpoints\\MovieEndpoints.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:41:07.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Program.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Program.cs",
+              "RelativeToolTip": "MovieAppAPI\\Program.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAEsAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T15:47:33.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MoviesDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\MoviesDbContext.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\MoviesDbContext.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\MoviesDbContext.cs",
+              "RelativeToolTip": "MovieAppAPI\\Data\\MoviesDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:32:02.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Review.cs",
+              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Review.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAgwBMAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T19:10:12.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TagEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\TagEndpoints.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Endpoints\\TagEndpoints.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Endpoints\\TagEndpoints.cs",
+              "RelativeToolTip": "MovieAppAPI\\Endpoints\\TagEndpoints.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwDAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:38:35.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthSeeder.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\AuthSeeder.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\AuthSeeder.cs",
+              "RelativeToolTip": "MovieAppAPI\\Auth\\AuthSeeder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T13:28:02.774Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\Model\\User.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\Model\\User.cs",
+              "RelativeToolTip": "MovieAppAPI\\Auth\\Model\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:35:49.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "JwtTokenGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
+              "RelativeToolTip": "MovieAppAPI\\Auth\\JwtTokenGenerator.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwDsAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T10:31:38.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Movie.cs",
+              "RelativeDocumentMoniker": "MovieAppAPI\\Data\\Entities\\Movie.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Data\\Entities\\Movie.cs",
+              "RelativeToolTip": "MovieAppAPI\\Data\\Entities\\Movie.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAiwBAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T08:43:58.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\appsettings.json",
               "RelativeDocumentMoniker": "MovieAppAPI\\appsettings.json",
@@ -264,19 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\Model\\User.cs",
-              "RelativeDocumentMoniker": "MovieAppAPI\\Auth\\Model\\User.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Auth\\Model\\User.cs",
-              "RelativeToolTip": "MovieAppAPI\\Auth\\Model\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T17:35:49.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\KTU\\3 kursas\\Saitynai\\MovieAppAPI\\movie-app-ktuproject\\MovieAppAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "MovieAppAPI\\Properties\\launchSettings.json",

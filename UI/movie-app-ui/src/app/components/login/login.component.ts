@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl, A
 import { NgClass } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginComponent{
     private formBuilder: FormBuilder, 
     private authService: AuthService,
     private router: Router,
+    private notif: ToastrService
   ){}
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -54,6 +56,9 @@ export class LoginComponent{
       const {username, password} = this.loginForm.value;
       this.authService.login(username, password).subscribe(
         (response) =>{
+          this.notif.success("Success login","",{
+            timeOut:1000
+          })
           this.dialog.close();
         },
         (error) =>{

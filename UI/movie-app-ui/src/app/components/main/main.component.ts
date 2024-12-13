@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
-import { FormsModule } from '@angular/forms';
-import { response } from 'express';
-import { Router } from '@angular/router';
+import { FormsModule, NgModel } from '@angular/forms';
+import { Router,  ActivatedRoute, RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-main',
@@ -13,18 +13,18 @@ import { Router } from '@angular/router';
 })
 
 export class MainComponent implements OnInit {
-  constructor(private movieServie: MovieService, private router: Router){}
+  constructor(private movieServie: MovieService, private router: Router, private route: ActivatedRoute){}
   allMovies: Movie[] = [];
   imageUrl: string | undefined;
-  id!: number;
-  emit(id: number) {
-    console.log("id:",id);
-  }
-  loadImage(){
-      this.movieServie.getMovieById(this.id).subscribe( 
-        (response)=>{
-          this.imageUrl = response.posterUrl;
-      });
+  id!: string;
+
+  openMovie(id: number, title: string) {
+    const encodedId = encodeURIComponent(id);
+    const encodedTitle = encodeURIComponent(title);
+    const url = `/movie/${encodedId}/${encodedTitle}`;
+
+    this.router.navigate([url]);
+
   }
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class MainComponent implements OnInit {
     )
   }
 }
-interface Movie{
+export interface Movie{
   id: number,
   title: string,
   director:string,

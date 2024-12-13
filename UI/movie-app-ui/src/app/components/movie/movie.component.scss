@@ -1,0 +1,46 @@
+img{
+    min-width: 200px;
+    max-height: 400px;
+}
+
+.form-control{
+    background-color: gray;
+}
+
+.movie-background-blur {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.poster-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.rating svg {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.rating svg:hover {
+    transform: scale(1.2);
+}
+textarea{
+    background-color: gray;
+}
+textarea::placeholder{
+    color: #101015;
+}
+.bi-star-fill{
+    color:gray;
+    
+    &.rated{
+        color:gold;
+    }
+}
+

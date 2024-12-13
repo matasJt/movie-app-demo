@@ -52,3 +52,13 @@ input:focus {
     padding: 5px; 
     background-color: #101015;
 }
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+      width: 100%;
+      max-width: 100%;
+      left: 0;
+      right: 0;
+      top:15%;
+      position: fixed;
+    }
+  }

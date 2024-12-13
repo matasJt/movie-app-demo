@@ -33,7 +33,7 @@ namespace MovieAppAPI.Data.Dtos
 		}
 	}
 
-	public record ReviewDto(string Content, int Rating, DateTimeOffset CreatedAt);
+	public record ReviewDto(int Id, string Content, int Rating, DateTimeOffset CreatedAt, string UserName,string UserId);
 
 	public record CreateUpdateReviewDto(string Content, int Rating)
 	{

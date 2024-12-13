@@ -4,5 +4,8 @@
 @import 'material-icons/iconfont/material-icons.css';
 
 body{
-    background-color: #282828;
+  background-image: linear-gradient(to left bottom, #1a1718, #242120, #2d2b29, #353633, #3e413f);
+  }
+  html {
+    scroll-behavior: auto !important;
   }
