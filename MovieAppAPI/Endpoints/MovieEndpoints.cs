@@ -16,6 +16,10 @@ namespace MovieAppAPI.Endpoints
 				return (await dbContext.Tags.Where(x => x.Id == tagId).SelectMany(x => x.Movies).ToListAsync()).Select(x => x.ToDto());
 
 			});
+			moviesGroup.MapGet("/movies", async (MoviesDbContext dbContext) =>
+			{
+				return await dbContext.Movies.Select(x => x.ToDto()).ToListAsync();
+			});
 			moviesGroup.MapGet("/movies/{movieId:int}", async (MoviesDbContext dbContext, int movieId) =>
 			{
 				var movie = await dbContext.Movies.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == movieId);

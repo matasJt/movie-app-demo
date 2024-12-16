@@ -252,7 +252,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("MovieAppAPI.Data.Entities.Review", b =>
@@ -286,7 +286,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("MovieAppAPI.Data.Entities.Tag", b =>
@@ -313,7 +313,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("MovieTag", b =>
@@ -328,7 +328,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("TagsId");
 
-                    b.ToTable("MovieTag");
+                    b.ToTable("MovieTag", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

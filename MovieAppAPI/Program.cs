@@ -20,7 +20,7 @@ builder.Services.AddTransient<JwtTokenGenerator>();
 builder.Services.AddScoped<AuthSeeder>();
 builder.Services.AddDbContext<MoviesDbContext>();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
-builder.Services.AddCors(policy=> policy.AddDefaultPolicy(options=> options.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+builder.Services.AddCors(policy=> policy.AddDefaultPolicy(options=> options.WithOrigins("https://cinemaster-bxb8h8hea9h3fags.northeurope-01.azurewebsites.net").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
 
 builder.Services.AddIdentity<User, IdentityRole>()
 	.AddEntityFrameworkStores<MoviesDbContext>()

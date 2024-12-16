@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MovieService } from '../../services/movie.service';
+import { Movie, MovieService } from '../../services/movie.service';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Router,  ActivatedRoute, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
@@ -31,16 +31,8 @@ export class MainComponent implements OnInit {
     this.movieServie.getAllMovies().subscribe(
       (response: Movie[]) =>{
        this.allMovies = response;
+       console.log(this.allMovies);
       }
     )
   }
 }
-export interface Movie{
-  id: number,
-  title: string,
-  director:string,
-  year:number,
-  tags: number[],
-  genre: string,
-  posterUrl: string
-};

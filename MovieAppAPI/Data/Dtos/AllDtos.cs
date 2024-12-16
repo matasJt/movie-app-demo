@@ -4,7 +4,7 @@ using MovieAppAPI.Data.Entities;
 
 namespace MovieAppAPI.Data.Dtos
 {
-	public record TagDto(int Id, string Title);
+	public record TagDto(int Id, string Title, string Description, string UserId);
 
 	public record CreateUpdateTagDto(string Title, string Description)
 	{
@@ -12,13 +12,12 @@ namespace MovieAppAPI.Data.Dtos
 		{
 			public Validator()
 			{
-				RuleFor(x => x.Title).NotEmpty().Length(2, 20);
-				RuleFor(x => x.Description).NotEmpty().Length(10, 50);
+				RuleFor(x => x.Description).NotEmpty().Length(2, 50);
 			}
 		}
 	}
 
-	public record MovieDto(int Id, string Title, string Director, int Year, string Genre, List<string> TagNames, string PosterUrl);
+	public record MovieDto(int Id, string Title, string Director, int Year, string Genre, List<string> Tags, List<int> TagsIds, string PosterUrl);
 	public record UpdateCreateMovieDto(string Title, string Director, int Year, string Genre, List<int> Tags, string PosterUrl)
 	{
 		public class Validator : AbstractValidator<UpdateCreateMovieDto>

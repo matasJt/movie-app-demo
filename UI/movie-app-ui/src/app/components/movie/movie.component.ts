@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MovieService, Review } from '../../services/movie.service';
-import { Movie } from '../main/main.component';
+import { Movie, MovieService, Review, Tag } from '../../services/movie.service';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormControl, AbstractControl, NgModel, FormsModule } from '@angular/forms';
 import { CommonModule, ViewportScroller } from '@angular/common';
@@ -18,36 +17,43 @@ import { response } from 'express';
   styleUrl: './movie.component.scss'
 })
 export class MovieComponent implements OnInit {
-  editingReviewId: number = 0;
+  editingReviewId: number | null = null;
   canEdit = false;
   editedContent?: string = '';
   editingForm: FormGroup = this.formBulder.group({
     content: ['', [Validators.required, Validators.minLength(10)]],
   });
 cancelEdit() {
-  this.editingReviewId = 0;
+  this.editingReviewId = null;
+  this.editingForm.reset();
 }
 saveComment() {
   var header = this.auth.getBearer();
   const { content } = this.editingForm.value;
-  this.movieService.updateReview(content, 10, this.movieId, this.editingReviewId,header).subscribe(
+  this.movieService.updateReview(content, 10, this.movieId, this.editingReviewId!,header).subscribe(
     (response)=>{
       const index = this.allReviews.findIndex((r) => r.id === this.editingReviewId);
       if (index !== -1) {
         this.allReviews[index] = { ...this.allReviews[index], content };
       }
-      this.editingReviewId = 0;
+      this.cancelEdit();
     }
   );
 
 }
 
 editComment(reviewId: number) {
-  this.editingReviewId = reviewId;
+  if (this.editingReviewId === reviewId) return;
+
+  
+  this.cancelEdit();
   const review = this.allReviews.find(r=> r.id === reviewId);
+  this.editingReviewId = reviewId;
   this.editingForm.patchValue({
+   
     content: review?.content
   });
+  
 }
 deleteComment(reviewId: number) {
   var header = this.auth.getBearer();
@@ -74,15 +80,25 @@ deleteComment(reviewId: number) {
               private router: Router,
               private scroller: ViewportScroller,
               private formBulder: FormBuilder,
-              private cookieService: CookieService
+              private cookieService: CookieService,
+              private cdr: ChangeDetectorRef
   ){
-  }
-  movie: Movie | undefined;
-  allReviews: Review[] = [];
-  ngOnInit(): void {
+    this.auth.isAuthenticated$.subscribe( (status) =>{
+      this.isAuthenticated = status;
+    });
     this.auth.userId$.subscribe( (user)=>{
       this.userId = user;
   });
+  }
+  movie: Movie | undefined;
+  tag: Omit<Tag,'id'> = {
+    title: '',
+    description: '',
+    userId: ' '
+  }
+  allReviews: Review[] = [];
+  allTags: Tag[] = [];
+  ngOnInit(): void {
     this.reviews = this.formBulder.group({
       content:[
         '',
@@ -93,9 +109,7 @@ deleteComment(reviewId: number) {
       ]
     });
     this.scroller.scrollToPosition([0,0]);
-    this.auth.isAuthenticated$.subscribe( (status) =>{
-      this.isAuthenticated = status;
-    });
+   
 
     this.route.paramMap.subscribe( (params) =>{
       this.movieId = params.get('id')!;
@@ -144,10 +158,39 @@ deleteComment(reviewId: number) {
   getMovie(){
     this.movieService.getMovieById(this.movieId).subscribe( (response:Movie) =>{
         this.movie = response;
+        this.movie.tags = response.tags;
+        this.movie.tagsIds = response.tagsIds;
     });
   }
   setRating(rate: number) {
       this.rating = rate;
   }
+
+  addTag() {
+    const header = this.auth.getBearer();
+    this.movieService.addTag(this.tag.title, header).subscribe(
+      (newTag: Tag) => {
+        this.allTags.push(newTag);
+  
+        this.movieService.addTagToMovie(this.allTags, this.movieId, this.movie!, header).subscribe(
+          () => {
+            if (this.movie) {
+              this.movie.tags = [...this.movie.tags, newTag.title]; // Add new tag to tags array
+              console.log(this.movie.tags)
+              this.movie.tagsIds = [...this.movie.tagsIds, newTag.id]; // Update tagsIds
+            }
+            this.tag.title = ''; // Clear the input
+            this.cdr.detectChanges(); // Trigger UI update
+          }
+        );
+      }
+    );
+  }
+
+  addToMovie(){
+    var header = this.auth.getBearer();
+   
+  }
+
 
 }

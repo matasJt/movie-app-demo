@@ -16,7 +16,7 @@ namespace MovieAppAPI.Data.Entities
 
 		public TagDto ToDto()
 		{
-			return new TagDto(Id, Title);
+			return new TagDto(Id, Title, Description,UserId);
 		}
 	}
 }

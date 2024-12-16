@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="row">
+      <div class="mx-auto col-md">
+        <div class="card border-0 my-5">
+          <div class="card-body p-4 p-sm-5">
+          <div class="text-center mb-4">
+            <svg height="75px" width="100px" class="" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 495 495" xml:space="preserve">
+          <g>
+            <path style="fill:#2488FF;" d="M247.5,495H495v-40H382.432C343.619,480.291,297.28,495,247.5,495z"/>
+            <path style="fill:#00479B;" d="M247.5,405c-27.57,0-50-22.43-50-50c0-27.57,22.43-50,50-50V190c-27.57,0-50-22.43-50-50
+              c0-27.57,22.43-50,50-50V0C110.81,0,0,110.81,0,247.5S110.81,495,247.5,495V405z M140,297.5c-27.57,0-50-22.43-50-50
+              c0-27.57,22.43-50,50-50s50,22.43,50,50C190,275.07,167.57,297.5,140,297.5z"/>
+            <path style="fill:#003068;" d="M495,247.5C495,110.81,384.19,0,247.5,0v90c27.57,0,50,22.43,50,50c0,27.57-22.43,50-50,50v115
+              c27.57,0,50,22.43,50,50c0,27.57-22.43,50-50,50v90c49.78,0,96.119-14.709,134.932-40C450.195,410.845,495,334.41,495,247.5z
+              M355,197.5c27.57,0,50,22.43,50,50c0,27.57-22.43,50-50,50s-50-22.43-50-50C305,219.93,327.43,197.5,355,197.5z"/>
+            <path style="fill:#46F8FF;" d="M197.5,140c0,27.57,22.43,50,50,50s50-22.43,50-50c0-27.57-22.43-50-50-50S197.5,112.43,197.5,140z"
+              />
+            <path style="fill:#46F8FF;" d="M140,197.5c-27.57,0-50,22.43-50,50c0,27.57,22.43,50,50,50s50-22.43,50-50
+              C190,219.93,167.57,197.5,140,197.5z"/>
+            <path style="fill:#46F8FF;" d="M197.5,355c0,27.57,22.43,50,50,50s50-22.43,50-50c0-27.57-22.43-50-50-50S197.5,327.43,197.5,355z"
+              />
+            <path style="fill:#46F8FF;" d="M355,297.5c27.57,0,50-22.43,50-50c0-27.57-22.43-50-50-50s-50,22.43-50,50
+              C305,275.07,327.43,297.5,355,297.5z"/>
+          </g>
+          </svg>
+          </div>
+         
+            @if(invalidLogin)
+            {
+             
+              <div class="alert alert-danger">Invalid username or password</div>
+            }
+            <h5 class="card-title text-center mb-5 fst-italic fs-4">Sign up to your account</h5>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+              <div class="form-floating mb-3" id="form-input">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="username"
+                 [class.is-invalid]=" submitted && form['username'].errors">
+                 @if (submitted && form['username'].errors) 
+                 {
+                  <div class="invalid-feedback">
+                    @if (form['username'].errors['required']) 
+                    {
+                      <div>Username is required</div>
+                    } 
+                    @if (form['username'].errors['minlength']) 
+                    {
+                      <div>Username must be at least 6 characters</div>
+                    }
+                  </div>
+                }
+                <label for="floatingInput">Username</label>
+              </div>
+              <div class="form-floating mb-3" id="form-input">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email"
+                 [class.is-invalid]=" submitted && form['username'].errors">
+                 @if (submitted && form['email'].errors) 
+                 {
+                  <div class="invalid-feedback">
+                    @if (form['email'].errors['required']) 
+                    {
+                      <div>Email is required</div>
+                    } 
+                    @if (form['email'].errors['email']) 
+                    {
+                      <div>Email form</div>
+                    }
+                  </div>
+                }
+                <label for="floatingInput">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"
+                [ngClass]="{'is-invalid': submitted && form['password'].errors}">
+                @if (submitted && form["password"].errors)
+                {
+                    <div class="invalid-feedback">
+                        @if (form["password"].errors["required"])
+                        {
+                            <div>Password is required</div>
+                        }
+                        @if (form["password"].errors["minlength"])
+                        {
+                            <div>Password must be at least 6 characters</div>
+                        }
+                        @if (form["password"].errors["pattern"])
+                        {
+                            <div>Password must contain one special character, digit and uppercase letter</div>
+                        }
+                    </div>
+                }
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-success btn-login text-uppercase fw-bold" type="submit">Sign in</button>
+              </div>
+              <hr class="my-4">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -45,7 +45,7 @@ namespace MovieAppAPI.Auth
 
 							if (existingUser == null)
 							{
-								return Results.UnprocessableEntity();
+								return Results.UnprocessableEntity("Error");
 							}
 
 							var userRoles = await userManager.GetRolesAsync(existingUser);
@@ -64,7 +64,7 @@ namespace MovieAppAPI.Auth
 
 					if (!isPasswordValid)
 					{
-						return Results.UnprocessableEntity("Invalid password");
+						return Results.UnprocessableEntity(user);
 					}
 
 					var roles = await userManager.GetRolesAsync(user);
@@ -74,8 +74,8 @@ namespace MovieAppAPI.Auth
 					context.Response.Cookies.Append("refreshToken", refreshToken, new CookieOptions
 					{
 						HttpOnly = true,
-						SameSite = SameSiteMode.Strict, //None
-						//Secure = true,
+						SameSite = SameSiteMode.None,
+						Secure = true,
 						Expires = DateTime.UtcNow.AddDays(7)
 					});
 

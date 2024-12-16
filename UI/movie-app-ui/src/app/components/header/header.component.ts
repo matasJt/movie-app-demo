@@ -6,6 +6,7 @@ import { LoginComponent } from '../login/login.component';
 import { AuthService } from '../../services/auth.service';
 import { HostListener } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -61,6 +62,13 @@ export class HeaderComponent implements OnInit {
   }
   openLogin() {
     this.dialog.open(LoginComponent,{
+      height:'auto',
+      width:'30%',
+      exitAnimationDuration:'300ms'
+    });
+  }
+  openRegister(){
+    this.dialog.open(RegisterComponent,{
       height:'auto',
       width:'30%',
       exitAnimationDuration:'300ms'

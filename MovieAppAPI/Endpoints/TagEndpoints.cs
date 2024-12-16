@@ -17,7 +17,7 @@ namespace MovieAppAPI.Endpoints
 			{
 				return (await dbContext.Tags.ToListAsync()).Select(x => x.ToDto());
 			});
-			tagsGroup.MapGet("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId) =>
+			tagsGroup.MapGet("/tags/{tagId:int}", async (MoviesDbContext dbContext, int tagId, HttpContext httpContext) =>
 			{
 				var tag = await dbContext.Tags.FirstOrDefaultAsync(x => x.Id == tagId);
 
@@ -26,7 +26,7 @@ namespace MovieAppAPI.Endpoints
 					return Results.NotFound();
 				}
 
-				return Results.Ok(new TagDto(tag.Id, tag.Title));
+				return Results.Ok(new TagDto(tag.Id, tag.Title, tag.Description, httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)!));
 			});
 			tagsGroup.MapPost("/tags", async (MoviesDbContext dbContext, CreateUpdateTagDto dto, HttpContext httpContext) =>
 			{
