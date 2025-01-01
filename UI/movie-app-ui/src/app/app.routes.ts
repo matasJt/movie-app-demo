@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Routes, withInMemoryScrolling } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -12,13 +12,14 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'admin',
-        component: HomeComponent,
-        canActivate: [authGuard]
+        path:'main',
+        component:MainComponent,
+    
     },
     {
-        path:'main',
-        component:MainComponent
+        path:'',
+        pathMatch:'full',
+        redirectTo:'/main',
     },
     {
         path:'movie/:id/:title',

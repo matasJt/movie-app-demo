@@ -14,8 +14,7 @@ export class AuthService {
   private authenticated = new BehaviorSubject<boolean>(false);
   private userRole = new BehaviorSubject<string | null>(null);
   private _userId = new BehaviorSubject<string>('');
-  // private apiUrl = "http://localhost:5031/api";
-  private apiUrl = environment.apiUrl;
+  private apiUrl = "http://localhost:5031/api";
 
   isAuthenticated$ = this.authenticated.asObservable();
   userRole$ = this.userRole.asObservable();

@@ -1,0 +1,7 @@
+<div class="pagination">
+    <button (click)="changePage(currentPage-1)" [disabled]="currentPage == 1">Previous page</button>
+    <label class="text-light">{{totalPages}}</label>
+    <button (click)="changePage(currentPage+1)" [disabled]="currentPage == totalPages">Next page</button>
+    <label class="text-light">{{totalItems}}</label>
+    <label class="text-light">Current page: {{currentPage}}</label>
+</div>

@@ -12,8 +12,8 @@ import { environment } from '../../environments/environment.development';
 export class MovieService {
 
   constructor(private http: HttpClient,private route: ActivatedRoute) { }
-  // private apiUrl ="http://localhost:5031/api";
-  private apiUrl = environment.apiUrl;
+  private apiUrl ="http://localhost:5031/api";
+  // private apiUrl = environment.apiUrl;
 
   getMovieById(id: string) : Observable<any>{
     return this.http.get(this.apiUrl + "/movies/" + id, {withCredentials: true});
@@ -53,6 +53,9 @@ export class MovieService {
     const description = "tt"; 
     return this.http.post(this.apiUrl + `/tags`,{title, description}, {headers, withCredentials:true});
   }
+  getPaginatedMovies(page:number,pageSize:number):Observable<any>{
+    return this.http.get(this.apiUrl + `/movies/page/${page}/size/${pageSize}`, {withCredentials:true});
+  }
 
 }
 
@@ -78,5 +81,8 @@ export interface Movie{
   genre: string,
   tags: string[],
   tagsIds: number[],
-  posterUrl: string
+  poster: string,
+  plot:string,
+  actors:string,
+  runtime:string
 };

@@ -43,4 +43,13 @@ textarea::placeholder{
         color:gold;
     }
 }
+#info{
+    inline-size: 600px;
+    margin-bottom: 50px;
+    overflow-wrap: break-word;
+}
+h3:hover{
+    color:cornflowerblue;
+    cursor:grab;
+}
 

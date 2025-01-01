@@ -7,7 +7,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideToastr } from 'ngx-toastr';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideHttpClient(), provideAnimationsAsync(), provideAnimationsAsync(), provideToastr(),
-
+  providers: [provideRouter(routes, withInMemoryScrolling({
+        scrollPositionRestoration: 'disabled', 
+      })), provideClientHydration(), provideHttpClient(), provideAnimationsAsync(), provideAnimationsAsync(), provideToastr(), 
   ]
 };

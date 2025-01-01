@@ -1,32 +1,37 @@
 <div class="movie-details-container position-relative" style="padding-top: 150px;">
     <!-- Background Blur -->
     <div class="movie-background-blur position-fixed top-0 start-0 w-100 h-100" 
-         [style.background-image]="'url(' + movie?.posterUrl + ')'"
+         [style.background-image]="'url(' + movie?.poster + ')'"
          style="background-size: cover; background-position: center; filter: blur(15px) brightness(40%); z-index: -1;">
     </div>
 
     <!-- Main Content -->
     <div class="container-fluid d-flex flex-column align-items-center justify-content-start p-4">
         <!-- Movie Content -->
-        <div class="movie-content bg-dark bg-opacity-75 text-white rounded-4 shadow-lg p-4 d-flex flex-wrap align-items-start" style="min-width: 80%;" >
+        <div class="movie-content bg-dark bg-opacity-75 text-white rounded-4 shadow-lg p-4 d-flex flex-wrap align-items-start" style="min-width: 85%;" >
             <!-- Movie Poster -->
             <div class="poster-container me-4 mb-3" style="flex-shrink: 0;">
-                <img [src]="movie?.posterUrl" 
+                <img [src]="movie?.poster" 
                      class="rounded-4 shadow" 
                      alt="Movie Poster"
                      style="width: 100%; max-width: 250px; height: auto; object-fit: cover;">
+                     
             </div>
-
+            
+           
             <!-- Movie Details -->
-            <div class="details-container flex-grow-1 ms-5">
-                <h1 class="mb-5 fw-bold fs-2">{{ movie?.title }}</h1>
-                <p class="fw-light fs-5"><strong>Director: </strong>{{movie?.director}}</p>
-                <p class="fw-light fs-5"><strong>Year: </strong>{{movie?.year}}</p>
-                <p class="fw-light fs-5"><strong>Genre: </strong>{{movie?.genre}}</p>
+            <div class="details-container ms-3">
+                <h3 class="mb-5 fw-bold fs-3">{{ movie?.title }}</h3>
+                <p class="fw-light fs-6"><strong class="fw-bold">Director: </strong>{{movie?.director}}</p>
+                <p class="fw-light fs-6"><strong class="fw-bold">Year: </strong>{{movie?.year}}</p>
+                <p class="fw-light fs-6"><strong class="fw-bold">Genre: </strong>{{movie?.genre}}</p>
+                <p class="fw-light fs-6"><strong class="fw-bold">Runtime: </strong>{{movie?.runtime}}</p>
+                <p class="fw-light fs-6"><strong class="fw-bold">Cast: </strong>{{movie?.actors}}</p>
                 <p class="fw-light fs-6">
                     <strong>Tags: </strong>
                     <span *ngFor="let tag of movie?.tags" class="badge bg-secondary me-2">{{ tag }}</span>
                   </p>
+                  
                 
                 <!-- Rating -->
                 <div class="rating my-3">
@@ -75,10 +80,19 @@
                 }
                 
             </div>
+            <div class="poster-container ms-3" style="flex-shrink: 0; margin-top: 80px;">            
+                    <div id="info">
+                        <strong>Description: </strong>
+                        <p class="fw-lighter fs-6 pt-2">{{movie?.plot}}</p>
+                    </div>
+                                
+            </div>
+           
         </div>
+        
 
         <!-- Comments Section -->
-        <div class="comments-section bg-dark bg-opacity-75 text-light rounded-4 shadow-lg p-4 mt-5" style="min-width: 80%; margin-bottom: 200px;">
+        <div class="comments-section bg-dark bg-opacity-75 text-light rounded-4 shadow-lg p-4 mt-5" style="min-width: 85%; margin-bottom: 200px;">
             <h3 class="mb-3 fw-bold fs-2">Comments:</h3>
 
                    

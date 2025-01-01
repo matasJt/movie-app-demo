@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MovieAppAPI.Migrations
 {
     [DbContext(typeof(MoviesDbContext))]
-    [Migration("20241108205342_Identity")]
-    partial class Identity
+    [Migration("20241221142427_newone")]
+    partial class newone
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -232,11 +232,31 @@ namespace MovieAppAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Actors")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Director")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Plot")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Poster")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Runtime")
                         .IsRequired()
                         .HasColumnType("text");
 

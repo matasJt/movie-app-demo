@@ -13,7 +13,7 @@ namespace MovieAppAPI.Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseNpgsql(configuration.GetConnectionString("Azure"));
+			optionsBuilder.UseNpgsql(configuration.GetConnectionString("Postgres"));
 		}
 	}
 }

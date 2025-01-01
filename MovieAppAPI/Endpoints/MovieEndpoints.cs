@@ -20,6 +20,12 @@ namespace MovieAppAPI.Endpoints
 			{
 				return await dbContext.Movies.Select(x => x.ToDto()).ToListAsync();
 			});
+			moviesGroup.MapGet("/movies/page/{page:int}/size/{pageSize:int}", async (MoviesDbContext dbContext, int page, int pageSize) =>
+			{
+				var allMovies = await dbContext.Movies.Select(x => x.ToDto()).ToListAsync();
+				return allMovies.Skip((page - 1)*pageSize).Take(pageSize);
+
+			});
 			moviesGroup.MapGet("/movies/{movieId:int}", async (MoviesDbContext dbContext, int movieId) =>
 			{
 				var movie = await dbContext.Movies.Include(x => x.Tags).FirstOrDefaultAsync(x => x.Id == movieId);
@@ -38,16 +44,18 @@ namespace MovieAppAPI.Endpoints
 					Director = dto.Director,
 					Year = dto.Year,
 					Genre = dto.Genre,
-					UserId = httpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)!,
-					PosterUrl = dto.PosterUrl
+					UserId = "7e9e9350-0457-45ec-9341-fb9e52b5067e",
+					Poster = dto.Poster,
+					Actors = dto.Actors,
+					Plot = dto.Plot,
+					Runtime = dto.Runtime,
+					Country = dto.Country,
+
 				};
 				dbContext.Movies.Add(movie);
 
 				var tags = await dbContext.Tags.Where(x => dto.Tags.Contains(x.Id)).ToListAsync();
-				if (tags.Count == 0)
-				{
-					return Results.NotFound();
-				}
+				
 
 				foreach (var tag in tags)
 				{

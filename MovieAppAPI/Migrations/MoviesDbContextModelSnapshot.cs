@@ -229,11 +229,31 @@ namespace MovieAppAPI.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Actors")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Director")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Plot")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Poster")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Runtime")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -252,7 +272,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Movies", (string)null);
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("MovieAppAPI.Data.Entities.Review", b =>
@@ -286,7 +306,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("MovieAppAPI.Data.Entities.Tag", b =>
@@ -313,7 +333,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Tags", (string)null);
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("MovieTag", b =>
@@ -328,7 +348,7 @@ namespace MovieAppAPI.Migrations
 
                     b.HasIndex("TagsId");
 
-                    b.ToTable("MovieTag", (string)null);
+                    b.ToTable("MovieTag");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

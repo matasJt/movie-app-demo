@@ -1,17 +1,35 @@
 <div class="container px-4">
-    <h1 class="text-light fw-bold">Movies</h1>
+    @if(filtered.length > 0)
+    {
+        <h1 class="text-light fw-bold">Movies</h1>
+    }
+    @if(searched && filter !== '')
+    {
+        <h1 class="text-light fw-bold">Results: {{filter}} | {{totalItems}} </h1>
+    }
     <div class="row g-3 justify-content-start">
-        @for(movie of allMovies;track movie){
-            <div class="col-6 col-sm-4 col-md-2">
-                <div class="card h-100" (click)="openMovie(movie.id, movie.title)">
-                    <img [src]="movie.posterUrl" class="card-img-top" alt="Movie Poster" >
-                    <div class="card-body">
-                        <h5 class="card-title">{{movie.title}}</h5>
-                        <p class="card-text">{{movie.year}}</p>
+        @if(filtered.length > 0)
+        {
+            @for(movie of filtered;track movie){
+                <div class="col-6 col-sm-4 col-md-2">
+                    <div class="card h-100" (click)="openMovie(movie.id, movie.title)">
+                        <img [src]="movie.poster" class="card-img-top" alt="Movie Poster"
+                        style="width: 100%; max-width: 250px; height: 70%;" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{movie.title}}</h5>
+                            <p class="card-text">{{movie.year}}</p>
+                        </div>
                     </div>
                 </div>
+            }
+        }
+        @else
+        {
+            <div class="text text-danger text-center fs-2 fw-bold" style="margin-bottom: 400px;">
+                Not Found 404
             </div>
         }
+       
        
     </div>
 </div>

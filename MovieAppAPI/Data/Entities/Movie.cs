@@ -11,7 +11,11 @@ namespace MovieAppAPI.Data.Entities
 		public required string Director { get; set; }
 		public required int Year { get; set; }
 		public required string Genre { get; set; }
-		public required string PosterUrl { get; set; }
+		public required string Poster { get; set; }
+		public required string Plot { get; set; }
+		public required string Country { get; set; }
+		public required string Actors { get; set; }
+		public required string Runtime { get; set; }
 		public List<Tag> Tags { get; set; } = new List<Tag>();
 		[Required]
 		public required string UserId { get; set; }
@@ -19,7 +23,7 @@ namespace MovieAppAPI.Data.Entities
 		public User? User { get; set; }
 		public MovieDto ToDto()
 		{
-			return new MovieDto(Id, Title, Director, Year, Genre,Tags.Select(x=> x.Title).ToList(), Tags.Select(x=> x.Id).ToList(), PosterUrl);
+			return new MovieDto(Id, Title, Director, Year, Genre,Tags.Select(x=> x.Title).ToList(), Tags.Select(x=> x.Id).ToList(), Poster, Plot, Country, Actors, Runtime);
 		}
 	}
 }

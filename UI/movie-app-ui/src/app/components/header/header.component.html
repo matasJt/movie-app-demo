@@ -59,7 +59,7 @@
 
         <div class="d-none d-lg-flex align-items-center">
             <form class="d-flex me-3">
-                <input class="form-control form-control-sm me-2" type="search" placeholder="Search">
+                <input class="form-control form-control-sm me-2" type="search" (keydown.enter)="onEnter(filter.value, $event)" placeholder="Search" #filter>
                 <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24" 
@@ -75,7 +75,7 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-                <button class="btn btn-outline-success btn-sm">Search</button>
+                <button class="btn btn-outline-success btn-sm" (click)="searchWithFilter(filter.value)" type="button" >Search</button>
                 
             </form>
 
