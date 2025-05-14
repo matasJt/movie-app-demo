@@ -14,21 +14,21 @@ svetainė pasiūlys ką žiūrėti toliau. Sistema leis išsifiltruoti pagal nor
 ### **Vartotojas**
 
     Galimybė prisijungti ir atsijungti, autenfikacija remiantis JWT principu
-    Filmų pridėjimas į norimų žiūrėti sąrašą (watchlist). (kitam kartui, nes per daug)
+    Filmų pridėjimas į norimų žiūrėti sąrašą (watchlist).
     Galimybė pridėti filmus į peržiūrėtų filmų sąrašą.
     Filmų įvertinimas
-    Statistika apie peržiūrėtus filmus (pvz., kiek filmų peržiūrėjo per metus, mėnesį, bendrą peržiūrėtų filmų laiką). (kitam kartui, nes per sunku)
-    Galimybė sekti kitus vartotojus ir matyti jų veiklą (ką žiūri, ką vertina, ką rekomenduoja).
-    Kurti filmų sąrašus (pvz., „Klasikiniai siaubo filmai“). (kitam kartui, nes per sunku)
-    Matyti personalizuotas rekomendacijas, remiantis peržiūrėtais ir įvertintais filmais. (kitam kartui, nes per sunku)
+    Statistika apie peržiūrėtus filmus (pvz., kiek filmų peržiūrėjo per metus, mėnesį, bendrą peržiūrėtų filmų laiką).
+    Galimybė sekti kitus vartotojus ir matyti jų veiklą 
+    Kurti filmų sąrašus (pvz., „Klasikiniai siaubo filmai“).
+    Matyti personalizuotas rekomendacijas, remiantis peržiūrėtais ir įvertintais filmais.
 
 ### **Administratorius**
     
     Filmų duomenų bazės valdymas: filmų pridėjimas, redagavimas, ištrynimas.
     Vartotojų veiklos stebėjimas ir moderavimas (pvz., netinkamų komentarų ar apžvalgų šalinimas).
     Vartotojų paskyrų valdymas
-    Statistinė analizė: galimybė matyti vartotojų aktyvumą, populiariausius filmus, dažniausiai žiūrimus žanrus ir t.t.  (kitam kartui, nes per sunku)
-    Sisteminių pranešimų siuntimas visiems vartotojams (pvz., naujienos apie atnaujinimus, taisyklių pasikeitimus ir pan.). (kitam kartui, nes per sunku)
+    Statistinė analizė: galimybė matyti vartotojų aktyvumą, populiariausius filmus, dažniausiai žiūrimus žanrus ir t.t.  (
+    Sisteminių pranešimų siuntimas visiems vartotojams (pvz., naujienos apie atnaujinimus, taisyklių pasikeitimus ir pan.).
 ### Technologijos
 - Angular framework (Front-end)
   - Naudoja Typescript programavimo kalbą
